@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Neon Studio</title>
+<title>Cabelos & Cia | Beleza Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -14,12 +14,43 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0b0b0f;
+background:#0b0b0b;
 color:#fff;
-overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+padding:18px;
+border-bottom:1px solid #d4af37;
+z-index:999;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+color:#d4af37;
+font-size:20px;
+}
+
+nav a{
+color:#fff;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#d4af37;
 }
 
 /* HERO */
@@ -30,102 +61,190 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:
-radial-gradient(circle at top,#6a00ff33,transparent),
-radial-gradient(circle at bottom,#00d4ff22,transparent),
-#0b0b0f;
 padding:20px;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover;
 }
 
-.hero h1{
+.hero h2{
 font-size:3rem;
-margin-bottom:15px;
-background:linear-gradient(90deg,#7f00ff,#00d4ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+margin-bottom:10px;
 }
 
 .hero p{
-color:#aaa;
+color:#ccc;
 max-width:600px;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
+/* BOTÕES FLUTUANTES */
 .btn{
 padding:14px 28px;
 border-radius:50px;
-background:linear-gradient(90deg,#7f00ff,#00d4ff);
-color:white;
 text-decoration:none;
 font-weight:600;
+margin:10px;
+display:inline-block;
+animation:float 3s ease-in-out infinite;
 transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 25px #7f00ff66;
+.btn-gold{
+background:#d4af37;
+color:#000;
 }
 
-/* CARDS */
+.btn-outline{
+border:2px solid #d4af37;
+color:#fff;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+/* SEÇÕES */
 section{
 padding:80px 20px;
 text-align:center;
 }
 
-.cards{
-display:flex;
+h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+/* SERVIÇOS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:40px;
+margin-top:30px;
 }
 
 .card{
-background:#15151d;
+background:#151515;
 padding:20px;
 border-radius:15px;
-width:250px;
-border:1px solid #ffffff10;
+border:1px solid rgba(212,175,55,0.15);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-border-color:#7f00ff;
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+/* GALERIA */
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* CONTATO */
+.contact{
+background:#111;
+padding:50px 20px;
+border-top:1px solid #d4af37;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:white;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+animation:float 2.5s infinite;
+text-decoration:none;
 }
 </style>
+
 </head>
 
 <body>
 
+<header>
+<h1>Cabelos & Cia</h1>
+
+<nav>
+<a href="#servicos">Serviços</a>
+<a href="#galeria">Galeria</a>
+<a href="#agendamento">Agendar</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
 <section class="hero">
-<h1>Neon Studio ⚡</h1>
-<p>Uma landing page futurista feita só pra demonstração. Simples, bonita e rápida.</p>
-<a href="#" class="btn">Explorar</a>
+<h2>Beleza que transforma ✨</h2>
+<p>O melhor salão da região com atendimento premium, técnicas modernas e resultados incríveis.</p>
+
+<a href="#agendamento" class="btn btn-gold">Agendar Horário</a>
+<a href="https://wa.me/5549998095175" class="btn btn-outline">WhatsApp</a>
 </section>
 
-<section>
-<h2>Serviços</h2>
+<section id="servicos">
+<h3>Serviços</h3>
 
-<div class="cards">
-
-<div class="card">
-<h3>Design</h3>
-<p>Interfaces modernas e bonitas.</p>
-</div>
-
-<div class="card">
-<h3>Sites</h3>
-<p>Landing pages rápidas e responsivas.</p>
-</div>
-
-<div class="card">
-<h3>Branding</h3>
-<p>Identidade visual forte e marcante.</p>
-</div>
-
+<div class="grid">
+<div class="card">💇 Cortes Femininos</div>
+<div class="card">💇‍♂️ Cortes Masculinos</div>
+<div class="card">🎨 Coloração</div>
+<div class="card">✨ Tratamentos</div>
+<div class="card">👰 Penteados</div>
 </div>
 </section>
+
+<section id="galeria">
+<h3>Galeria</h3>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e">
+<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
+</div>
+</section>
+
+<section id="agendamento">
+<h3>Agendamento</h3>
+
+<div class="grid">
+<div class="card">📅 Escolha data</div>
+<div class="card">⏰ Escolha horário</div>
+<div class="card">💈 Escolha serviço</div>
+</div>
+</section>
+
+<section id="contato" class="contact">
+<h3>Contato</h3>
+<p>📍 Endereço do salão</p>
+<p>📞 (00) 00000-0000</p>
+<p>📧 contato@cabeloscia.com</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5549998095175">💬</a>
 
 </body>
 </html>
